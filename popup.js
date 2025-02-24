@@ -1,7 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("📌 Popup carregado.");
 
-  // Obtém os dados automaticamente ao abrir o popup
+  const copiarBtn = document.getElementById("copiarTodos");
+  const configBtn = document.getElementById("configuracoes");
+  const dataTable = document.getElementById("data-table");
+
+  // 🔹 Verificação para evitar erros caso elementos não existam
+  if (!copiarBtn || !configBtn || !dataTable) {
+    console.error("⚠️ Um ou mais elementos do popup não foram encontrados.");
+    return;
+  }
+
+  // 🔹 Obtém os dados automaticamente ao abrir o popup
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (!tabs || tabs.length === 0) {
       console.error("⚠️ Nenhuma aba ativa encontrada.");
@@ -16,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (response) {
+      if (response && response.dadosConfigurados) {
         console.log("✅ Dados recebidos:", response);
         exibirDados(response.dadosConfigurados);
       } else {
@@ -26,14 +36,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function exibirDados(dados) {
-    const tbody = document.querySelector("#data-table tbody");
-    tbody.innerHTML = "";
+    const tbody = dataTable.querySelector("tbody");
+    if (!tbody) {
+      console.error("⚠️ Elemento <tbody> não encontrado dentro da tabela.");
+      return;
+    }
+
+    tbody.innerHTML = ""; // Limpa os dados antes de adicionar novos
 
     Object.entries(dados).forEach(([chave, valor]) => {
       const tr = document.createElement("tr");
 
       const tdNome = document.createElement("td");
-      tdNome.textContent = chave.replace("_", " ").toUpperCase();
+      tdNome.textContent = chave.replace(/_/g, " ").toUpperCase();
       tdNome.style.fontWeight = "bold";
       tr.appendChild(tdNome);
 
@@ -45,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Copiar todos os dados ao clicar no botão
-  document.getElementById("copiarTodos").addEventListener("click", function () {
+  // 🔹 Copiar todos os dados ao clicar no botão
+  copiarBtn.addEventListener("click", function () {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (!tabs || tabs.length === 0) {
         console.error("⚠️ Nenhuma aba ativa encontrada.");
@@ -61,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
 
-        if (response) {
+        if (response && response.dadosConfigurados) {
           copiarTexto(response.dadosConfigurados);
         } else {
           console.warn("⚠️ Nenhum dado recebido.");
@@ -71,7 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function copiarTexto(dados) {
-    const valores = Object.values(dados).join("\t"); // Tabulação para colar no Google Sheets
+    if (!dados) {
+      console.warn("⚠️ Nenhum dado disponível para copiar.");
+      return;
+    }
+
+    const valores = Object.values(dados).join("\t");
     navigator.clipboard.writeText(valores).then(() => {
       alert("✅ Dados copiados com sucesso!");
     }).catch(err => {
@@ -79,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Configurar link do RMA
-  document.getElementById("configuracoes").addEventListener("click", function () {
+  // 🔹 Configurar link do RMA
+  configBtn.addEventListener("click", function () {
     let novoLink = prompt("Insira o link do RMA:");
 
     if (novoLink) {
@@ -89,18 +109,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-
-  // Carregar a URL salva no botão "Abrir RMA"
-  chrome.storage.sync.get("rmaLink", function (data) {
-    if (data.rmaLink) {
-      document.getElementById("abrirRMA").addEventListener("click", function () {
-        window.open(data.rmaLink, "_blank");
-      });
-    } else {
-      document.getElementById("abrirRMA").addEventListener("click", function () {
-        alert("⚠️ Nenhum link do RMA configurado! Vá até as configurações e insira um link.");
-      });
-    }
-  });
-
 });

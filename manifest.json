@@ -35,7 +35,12 @@
       "resources": [
         "copy.png",
         "setting.png",
-        "sheet.png"
+        "sheet.png",
+        "conjunto.png",
+        "explore.png",
+        "vade.png",
+        "enunciados.png",
+        "ementario.png"
       ],
       "matches": [
         "<all_urls>"
