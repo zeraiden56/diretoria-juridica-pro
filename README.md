@@ -9,33 +9,35 @@ Essa extensão foi desenvolvida para otimizar a extração de dados do **SEI (Si
 
 ## 📂 Estrutura do Projeto
 
+```
 /diretoria-juridica-pro/ 
-├── icons/ # Ícones da extensão 
-│ ├── icon16.png 
-│ ├── icon48.png 
-│ ├── icon128.png 
-├── img/ # Imagens utilizadas na extensão 
-│ ├── enviar.png 
-│ ├── enviar.svg 
-│ ├── enviar2.png 
-│ ├── icon.png 
-│ ├── icon2.png 
-├── temporario/ # Arquivos temporários e de teste 
-│ ├── background.js 
-│ ├── botoes_config.json 
-│ ├── content.js 
-│ ├── copy.png 
-│ ├── dados_config.json 
-│ ├── icon.png 
-├── LICENSE # Licença do projeto 
-├── manifest.json # Configuração da extensão para o Chrome 
-├── package-lock.json # Dependências do projeto 
-├── popup.html # Interface principal do popup da extensão 
-├── popup.js # Script responsável pelo funcionamento do popup 
-├── README.md # Documentação do projeto 
-├── setting.png # Ícone de configurações 
-├── sheet.png # Ícone de planilhas 
-├── styles.css # Estilização do popup
+├── icons/                # Ícones da extensão 
+│   ├── icon16.png 
+│   ├── icon48.png 
+│   ├── icon128.png 
+├── img/                 # Imagens utilizadas na extensão 
+│   ├── enviar.png 
+│   ├── enviar.svg 
+│   ├── enviar2.png 
+│   ├── icon.png 
+│   ├── icon2.png 
+├── temporario/          # Arquivos temporários e de teste 
+│   ├── background.js 
+│   ├── botoes_config.json 
+│   ├── content.js 
+│   ├── copy.png 
+│   ├── dados_config.json 
+│   ├── icon.png 
+├── LICENSE             # Licença do projeto 
+├── manifest.json       # Configuração da extensão para o Chrome 
+├── package-lock.json   # Dependências do projeto 
+├── popup.html          # Interface principal do popup da extensão 
+├── popup.js           # Script responsável pelo funcionamento do popup 
+├── README.md          # Documentação do projeto 
+├── setting.png        # Ícone de configurações 
+├── sheet.png         # Ícone de planilhas 
+├── styles.css        # Estilização do popup 
+```
 
 ---
 
