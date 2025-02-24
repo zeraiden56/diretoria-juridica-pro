@@ -52,7 +52,7 @@ Essa extensão foi desenvolvida para otimizar a extração de dados do **SEI (Si
 
 1️⃣ **Clone o repositório:**  
 ```sh
-git clone https://github.com/seu-usuario/diretoria-juridica-pro.git
+git clone https://github.com/zeraiden56/diretoria-juridica-pro.git
 cd diretoria-juridica-pro
 ```
 
