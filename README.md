@@ -9,9 +9,6 @@ Essa extensão foi desenvolvida para otimizar a extração de dados do **SEI (Si
 
 ## 📂 Estrutura do Projeto
 
-
-
-```
 /diretoria-juridica-pro/ 
 ├── icons/ # Ícones da extensão 
 │ ├── icon16.png 
