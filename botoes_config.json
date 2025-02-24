@@ -1,0 +1,5 @@
+{
+    "numero_processo": "body:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)",
+    "outro_dado": "body:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)",
+    "mais_um_dado": "body:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)"
+}

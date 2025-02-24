@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OHARA - Configuração</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      width: 300px;
+      background-color: #e2ece1;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #btnBuscarCopiarDados {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #btnBuscarCopiarDados img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 12px;
+      color: green;
+    }
+
+    footer {
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    label {
+      font-size: 14px;
+      text-align: left;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="icon.png" alt="Ícone da extensão">
+  <h3>Buscar e Copiar Dados</h3>
+  <p>Clique no botão abaixo para buscar e copiar os dados da página:</p>
+  <button id="btnBuscarCopiarDados">
+    <img src="enviar.png" alt="Buscar e Copiar">
+  </button>
+  <p class="status" id="status-send"></p>
+
+  <h3>Salvar Seletores</h3>
+  <label>Nome Advogado:</label>
+  <button id="btnSelecionarNomeAdvogado" class="select-btn">Selecionar</button>
+  <p id="statusNomeAdvogado"></p>
+
+  <label>Número Procedimento:</label>
+  <button id="btnSelecionarNumeroProcedimento" class="select-btn">Selecionar</button>
+  <p id="statusNumeroProcedimento"></p>
+
+  <label>Assunto:</label>
+  <button id="btnSelecionarAssunto" class="select-btn">Selecionar</button>
+  <p id="statusAssunto"></p>
+
+  <label>Data Recebimento:</label>
+  <button id="btnSelecionarDataRecebimento" class="select-btn">Selecionar</button>
+  <p id="statusDataRecebimento"></p>
+
+  <label>Tipo Atividade:</label>
+  <button id="btnSelecionarTipoAtividade" class="select-btn">Selecionar</button>
+  <p id="statusTipoAtividade"></p>
+
+  <label>Objeto Atividade:</label>
+  <button id="btnSelecionarObjetoAtividade" class="select-btn">Selecionar</button>
+  <p id="statusObjetoAtividade"></p>
+
+  <label>Setor Destino:</label>
+  <button id="btnSelecionarSetorDestino" class="select-btn">Selecionar</button>
+  <p id="statusSetorDestino"></p>
+
+  <label>Data Conclusão:</label>
+  <button id="btnSelecionarDataConclusao" class="select-btn">Selecionar</button>
+  <p id="statusDataConclusao"></p>
+
+  <button id="btnSalvarSeletores">Salvar Seletores</button>
+  <p id="statusMessage" class="status"></p>
+
+  <footer>Feito com ❤️ para a Defensoria Pública</footer>
+  <script src="popup.js"></script>
+</body>
+
+</html>

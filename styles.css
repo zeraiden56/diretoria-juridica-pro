@@ -1,0 +1,107 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização geral */
+body {
+    width: auto;
+    width: 750px;
+    height: auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 15px;
+    background-color: #0c1e31;
+    /* Azul-marinho escuro */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #303c5f;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 750px;
+}
+
+/* Ícone do título */
+.header-icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+/* Título */
+h2 {
+    font-size: 22px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Contêiner dos botões do cabeçalho */
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botões */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    width: 42px;
+    height: 42px;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ícones dentro dos botões */
+.copy-icon,
+.setting-icon {
+    width: 36px;
+    height: 36px;
+}
+
+/* Estilização da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Células */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    min-height: 50px;
+    /* 🔥 Define altura mínima para manter as linhas uniformes */
+}
+
+/* Última linha sem borda inferior */
+tr:last-child td {
+    border-bottom: none;
+}

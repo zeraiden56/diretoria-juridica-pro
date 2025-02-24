@@ -1,0 +1,13 @@
+{
+    "numero_processo": "body:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)",
+    "assunto": "",
+    "data_recebimento": "",
+    "prazo": "15 DIAS ÚTEIS",
+    "pedido_urgencia": "N/A",
+    "tipo_atividade": "N/A",
+    "comissao": "N/A",
+    "meio": "VIRTUAL",
+    "plataforma": "SEI",
+    "observacao": "",
+    "data_envio": ""
+}
